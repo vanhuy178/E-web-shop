@@ -1,0 +1,45 @@
+$main-bg: #fff;
+$main-color: #4267b2;
+
+$txt-main-color: #000;
+$text-second-color: #8d8d8d;
+$txt-white: #fff;
+
+//Set bg and color for button
+$btn-main-bg: $main-color;
+$btn-main-color: $main-bg;
+
+// Set header height responve
+$header-height: 170px;
+$header-tabler-height: 70px;
+$header-mobile-height: 40px;
+$header-shrink-height: 40px;
+
+// Set box-shadow
+$box-shadow: rgba(149, 157, 165, .2) 0px 8px 24px;
+
+// Set multiple color for many case don't exact with root color
+$colors: (
+    "blue": #4267b2,
+    "orange": #fbb96b,
+    "pink": #fefe73,
+    "white": #fff,
+    "black": #000,
+    "main": $main-color
+);
+
+$numbers: (
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+);
+
+// Set width for mobile and tablet
+$mobile-width: 600px;
+$tablet-width: 1024px;
