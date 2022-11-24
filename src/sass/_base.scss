@@ -2,45 +2,92 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    -webkit-tab-highlight-color: transparent;
-    user-select: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tab-highlight-color: transparent;
+  user-select: none;
 }
 
 html {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 a {
-    text-decoration: none;
-    color: unset;
+  text-decoration: none;
+  color: unset;
 }
 
 @each $color,
 $val in $colors {
-    .color-#{$color} {
-        color: $val
-    }
 
-    .bg-#{$color} {
-        background-color: $val;
-    }
+  .color-#{$color} {
+    color: $val
+  }
+
+  .bg-#{$color} {
+    background-color: $val;
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-#{$val} {
+    grid-template-columns: repeat($val, 1fr);
+  }
 }
 
 @each $number in $numbers {
-    .grid-col-sm-#{$number} {
-        @include mobile {
-            grid-template-colums: repeat($number, 1fr)
-        }
+  .grid-col-sm-#{$number} {
+    @include mobile {
+      grid-template-colums: repeat($number, 1fr)
     }
+  }
+}
+
+@each $number in $numbers {
+  .grid-col-md-#{$number} {
+    @include tablet {
+      grid-template-columns: repeat($number, 1fr);
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1620px;
+  padding: 0 50px;
+  margin: auto;
+
+  // Responsive for app mobile 
+  @include tablet {
+    padding: 0 20px;
+  }
+
+  @include mobile {
+    padding: 0 10px;
+  }
+}
+
+.main {
+  margin-top: $header-height;
+  margin-bottom: 2rem;
+  min-height: 100vh;
+
+  // Responsive for app mobile 
+  @include tablet {
+    margin-top: calc(#{$header-tablet-height} + 20px);
+  }
+
+  @include mobile {
+    margin-top: calc(#{$header-mobile-height} + 10px);
+  }
+
 }

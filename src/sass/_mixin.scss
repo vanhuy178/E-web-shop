@@ -6,12 +6,12 @@
 
 @mixin mobile {
     @media screen and (max-width: $mobile-width) {
-        // content
+        @content;
     }
 }
 
 @mixin tablet {
     @media screen and (max-width: $tablet-width) {
-        // content
+        @content;
     }
 }
