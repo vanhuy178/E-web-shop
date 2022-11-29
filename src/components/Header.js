@@ -44,7 +44,7 @@ export const Header = () => {
   const menuRef = useRef(null)
   const headerRef = useRef(null)
 
-  const menuToggle = () => menuRef.current.classList.toggle('active')
+  const menuLeftToggle = () => menuRef.current.classList.toggle('active')
   //console.log('Path name is: ', pathname, 'header ref is: ', headerRef, 'active navbar is: ', activeNav);
   console.log("Menu ref is: ", menuRef);
   return (
@@ -59,13 +59,13 @@ export const Header = () => {
 
         <div className='header__menu'>
 
-          <div className='header__menu__mobile-toggle' onClick={menuToggle}>
+          <div className='header__menu__mobile-toggle' onClick={menuLeftToggle}>
             <i className='bx bx-menu'></i>
           </div>
 
           <div className='header__menu__left' ref={menuRef}>
 
-            <div className='header__menu__left__close' onClick={menuToggle}>
+            <div className='header__menu__left__close' onClick={menuLeftToggle}>
               <i className='bx bx-chevron-left'></i>
             </div>
             {
@@ -74,7 +74,7 @@ export const Header = () => {
                   <div key={index}
                     className={`header__menu__item header__menu__left__item ${index === activeNav ? 'active' : ''}`
                     }
-                    onClick={menuToggle}>
+                    onClick={menuLeftToggle}>
                     <Link to={navItem.path}>
                       <span>{navItem.display}</span>
                     </Link>
