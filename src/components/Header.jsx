@@ -46,7 +46,7 @@ export const Header = () => {
 
   const menuLeftToggle = () => menuRef.current.classList.toggle('active')
   //console.log('Path name is: ', pathname, 'header ref is: ', headerRef, 'active navbar is: ', activeNav);
-  console.log("Menu ref is: ", menuRef);
+  //console.log("Menu ref is: ", menuRef);
   return (
     <div className='header' ref={headerRef}>
       <div className='container'>

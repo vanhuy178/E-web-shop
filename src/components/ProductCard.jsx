@@ -7,8 +7,13 @@ import Button from './Button'
 
 import numberWithCommas from '../utils/numberWithCommas'
 
+import { useDispatch } from 'react-redux';
+
+import { set } from '../redux/product-modal/productModalSlice'
+
 const ProductCard = props => {
-    console.log(props.title);
+    const dispath = useDispatch();
+
     return (
         <div className='product-card'>
             <Link to={`/catalog/${props.slug}`}>
@@ -33,6 +38,7 @@ const ProductCard = props => {
                         size="sm"
                         icon='bx bx-card'
                         animate={true}
+                        onClick={() => dispath(set(props.slug))}
                     >
                         Chọn mua
                     </Button>

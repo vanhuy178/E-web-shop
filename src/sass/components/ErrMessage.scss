@@ -1,0 +1,44 @@
+.err__message {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 10px;
+    background-color: red;
+
+    padding: 50px;
+    opacity: 0;
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    z-index: 105;
+
+    &__title {
+        font-size: .9rem;
+        color: white;
+
+    }
+
+    &__submit {
+        margin-top: 1rem;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        color: #4267b2;
+        text-align: center;
+    }
+
+    transform: scale(0);
+    transition: all .4s ease;
+
+    &__active {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
